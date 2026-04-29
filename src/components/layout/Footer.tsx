@@ -1,14 +1,13 @@
-import { Link } from "@tanstack/react-router";
 import { Instagram, Linkedin } from "lucide-react";
 import { Logo } from "./Logo";
 
 const links = [
-  { to: "/tentang-kami", label: "Tentang Kami" },
-  { to: "/layanan", label: "Layanan" },
-  { to: "/portofolio", label: "Portofolio" },
-  { to: "/blog", label: "Blog" },
-  { to: "/karir", label: "Karir" },
-  { to: "/kontak-kami", label: "Kontak Kami" },
+  { href: "https://redantcolony.com/tentang-kami/", label: "Tentang Kami" },
+  { href: "https://redantcolony.com/layanan/", label: "Layanan" },
+  { href: "https://redantcolony.com/portofolio/", label: "Portofolio" },
+  { href: "https://redantcolony.com/blog/", label: "Blog" },
+  { href: "https://recruitment.redantcolony.com/", label: "Karir" },
+  { href: "https://redantcolony.com/tentang-kami/", label: "Kontak Kami" },
 ] as const;
 
 export function Footer() {
@@ -33,9 +32,9 @@ export function Footer() {
           </div>
           <nav className="flex flex-wrap items-start justify-start gap-x-8 gap-y-3 lg:justify-end">
             {links.map((l) => (
-              <Link key={l.to} to={l.to} className="text-sm text-foreground/80 hover:text-brand">
+              <a key={l.label} href={l.href} className="text-sm text-foreground/80 hover:text-brand">
                 {l.label}
-              </Link>
+              </a>
             ))}
           </nav>
         </div>

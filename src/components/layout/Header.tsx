@@ -1,16 +1,15 @@
-import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/tentang-kami", label: "Tentang Kami" },
-  { to: "/layanan", label: "Layanan" },
-  { to: "/portofolio", label: "Portofolio" },
-  { to: "/blog", label: "Blog" },
-  { to: "/karir", label: "Karir" },
-  { to: "/kontak-kami", label: "Kontak Kami" },
+  { href: "https://redantcolony.com/", label: "Home" },
+  { href: "https://redantcolony.com/tentang-kami/", label: "Tentang Kami" },
+  { href: "https://redantcolony.com/layanan/", label: "Layanan" },
+  { href: "https://redantcolony.com/portofolio/", label: "Portofolio" },
+  { href: "https://redantcolony.com/blog/", label: "Blog" },
+  { href: "https://recruitment.redantcolony.com/", label: "Karir" },
+  { href: "https://redantcolony.com/tentang-kami/", label: "Kontak Kami" },
 ] as const;
 
 export function Header() {
@@ -21,15 +20,13 @@ export function Header() {
         <Logo />
         <nav className="hidden items-center gap-8 lg:flex">
           {navItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
+            <a
+              key={item.label}
+              href={item.href}
               className="text-sm text-foreground/80 transition-colors hover:text-brand"
-              activeProps={{ className: "text-sm text-brand font-semibold" }}
-              activeOptions={{ exact: item.to === "/" }}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
         <button
@@ -43,16 +40,14 @@ export function Header() {
       {open && (
         <nav className="lg:hidden border-t border-brand/10 bg-brand-soft px-6 py-4 flex flex-col gap-3">
           {navItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
+            <a
+              key={item.label}
+              href={item.href}
               className="text-sm text-foreground/80 hover:text-brand"
-              activeProps={{ className: "text-sm text-brand font-semibold" }}
-              activeOptions={{ exact: item.to === "/" }}
               onClick={() => setOpen(false)}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
       )}

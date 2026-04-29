@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Search } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { getJobBySlug } from "@/data/jobs";
+import { getJobBySlug } from "@/constants/jobs";
 
 export const Route = createFileRoute("/karir/$jobId")({
   component: KarirDetailPage,

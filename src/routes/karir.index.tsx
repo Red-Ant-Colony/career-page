@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { Search, ArrowRight } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { jobs } from "@/data/jobs";
+import { JOBS } from "@/constants/jobs";
 
 export const Route = createFileRoute("/karir/")({
   component: KarirPage,
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/karir/")({
 function KarirPage() {
   const [query, setQuery] = useState("");
   const filtered = useMemo(
-    () => jobs.filter((j) => j.title.toLowerCase().includes(query.toLowerCase())),
+    () => JOBS.filter((j) => j.title.toLowerCase().includes(query.toLowerCase())),
     [query],
   );
 

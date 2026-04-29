@@ -9,7 +9,7 @@ export type Job = {
   benefits: string[];
 };
 
-export const jobs: Job[] = [
+export const JOBS: Job[] = [
   {
     slug: "java-back-end-developer",
     title: "Java Back End Developer",
@@ -133,5 +133,5 @@ export const jobs: Job[] = [
 ];
 
 export function getJobBySlug(slug: string): Job | undefined {
-  return jobs.find((j) => j.slug === slug);
+  return JOBS.find((j) => j.slug === slug);
 }
