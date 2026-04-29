@@ -11,9 +11,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "deploy": "wrangler pages deploy dist/client",
-    "deploy:prod": "npm run build && wrangler pages deploy dist/client --branch=main",
-    "deploy:bun": "bun run build && bunx wrangler pages deploy dist/client",
-    "deploy:bun:prod": "bun run build && bunx wrangler pages deploy dist/client --branch=main"
+    "deploy:prod": "npm run build && wrangler pages deploy dist/client --branch=main"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
